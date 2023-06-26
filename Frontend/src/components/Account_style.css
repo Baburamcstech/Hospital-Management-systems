@@ -1,0 +1,14 @@
+.account button{
+    margin: 30px 30px 30px 20px;
+    justify-content: space-between;
+    font-size: larger;
+    font-weight: 400;
+    transform: scaleZ(5px);
+    border-radius: 5%;
+    transform:translate3d(40px 30px 4px);
+    width: 100px;
+    height: 100px;
+}
+button:hover{
+    background-color: aquamarine;
+}

@@ -1,0 +1,40 @@
+.background1{
+    
+        background-image: url("../assets/loginB.jpg");
+        width: 100%;
+        height: 700px;
+        display:-moz-popup;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+       
+}
+.registration-form {
+    display: grid;
+    grid-template-columns: max-content 1fr; /* Adjust the column widths as needed */
+    gap: 10px; /* Adjust the gap between columns */
+  }
+.dis{
+    display: block;
+    margin-top: 0px;
+    padding: 10rem;
+    justify-self: stretch;
+    justify-content: center;
+    font-size: larger;
+    font-weight: 400;
+}
+.dis button{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.dis input{
+    font-size: large;
+    z-index: 10px;
+    font-weight: 100;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.user{
+    margin-top: 20px;
+    font-size:medium;
+    font-weight: 300;
+}

@@ -1,0 +1,55 @@
+.mask{
+    position: relative;
+    width: 100%;
+    /* background-image: url(../assets/background.jpg); */
+    height: 100vh;
+    background-size: cover;
+
+}
+.mask p{
+     font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}
+.backgroundImg{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+}
+
+.hero{
+    width: 100%;
+    height: 100%;
+}
+
+.hero .content{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
+
+.hero .content p{
+    font-size: 1.4rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    padding: 0.6rem 0 1.5rem;
+    
+}
+.location{
+    margin-left: 46px;
+}
+.content .btn{
+    margin: 1rem .2rem;
+}
+@media screen and(max-width:640px) {
+    .hero .content p{
+        font-size: 1.4rem;
+        
+    }
+    
+}

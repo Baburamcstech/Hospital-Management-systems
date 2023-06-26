@@ -1,0 +1,8 @@
+.pad{
+    padding:20px;
+    justify-content: left;
+}
+.pad li{
+    padding:8px;
+   text-align: left;
+}
