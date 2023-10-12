@@ -27,7 +27,7 @@ const Navbar = () => {
         <li> <Link to='/Book_Appointment'>Book Appointment</Link></li>
         <li> <Link to='history'>Appointment History</Link></li>
         <li> <Link to='/Contact'>Medical History</Link></li>
-        <li> <Link to='/about'>About</Link></li>
+
         {/* {location.pathname === '/' && (
       <button className='loginb'><Link to='/Login'>Login</Link></button>
       )} */}

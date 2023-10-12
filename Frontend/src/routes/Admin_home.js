@@ -6,13 +6,12 @@ import Footer from '../components/Footer';
 const Admin_home = () => {
   return (
     <div>
-         <div>
+         
       <div className='homep'>
       <Navbar/> 
       </div>
       <HeroImg/>
       <Footer/> 
-    </div>
   
     </div>
   )

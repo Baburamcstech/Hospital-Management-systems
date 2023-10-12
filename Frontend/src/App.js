@@ -8,6 +8,7 @@ import Doctors from "./routes/Doctors";
 import Login from "./components/Login";
 import Registration from "./components/Registration.js";
 import Patient from "./routes/Patient";
+import Patient_statistics from "./components/Patient_statistics";
 import Contact from "./routes/Contact";
  import { Routes, Route } from 'react-router-dom';
 import ContactForm from "./components/ContactForm";
@@ -17,6 +18,7 @@ import Appointment_history from "./components/Appointment_history";
 import UserHistory from "./components/History_of_user";
 import TestInput from "./components/TestInput";
 import axios from "axios";
+import Patient_statistic from "./components/Patient_statistics";
 
 function App() {
 
@@ -58,6 +60,7 @@ function App() {
           <Route path="/Doctors" element= { <Doctors />} />
           <Route path="Patient/history" element={<UserHistory />} />
           <Route path="/patient" element={<Patient />} />
+          <Route path='patient_statistics' element={<Patient_statistics/>}/>
           <Route path="/Contact" element={<Contact />} />
           <Route path="/About" element={<About />} />
           <Route path="/testinput" element={<TestInput />} />
