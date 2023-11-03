@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     const data = 'SELECT * FROM BookedAppointment';
-  connection.query(data, (queryError, results) => {
+    connection.query(data, (queryError, results) => {
     if (queryError) {
       console.error('Error executing query:', queryError);
       return;
@@ -25,14 +25,13 @@ router.get("/", async (req, res) => {
 //get by id
 router.get("/id",func2.verifyToken, async (req, res) => {
   try {
-     const email = req.user.patient_email; // Assuming you have access to req.user.patient_email
+     const email = req.decodedData.email;
      const query = 'SELECT * FROM BookedAppointment WHERE email = ?';
      connection.query(query, [email], (queryError, results) => {
        if (queryError) {
          console.error('Error executing query:', queryError);
          return;
        }
-       console.log('Query results:', results);
        return res.json({ status: 'success', Result: results });
      });
   }
@@ -40,16 +39,20 @@ router.get("/id",func2.verifyToken, async (req, res) => {
     console.log(err);
   }
 });
-router.post("/", async (req, res) => {
+router.post("/",func2.verifyToken, async (req, res) => {
   try {
-    const {name,phone,email,address,doctor,problem,time_slot}=req.body;
+     const email = req.decodedData.email;
+    const {name,phone,address,doctor,problem,time_slot}=req.body;
+    emailAlt=req.body.email;
     const queryString =
-    "INSERT INTO BookedAppointment (name, phone,email,address,doctor, problem,time_slot) VALUES ('" +
+    "INSERT INTO BookedAppointment (email,name, phone,emailAlt,address,doctor, problem,time_slot) VALUES ('" +
+    email +
+    "','" +
     name +
     "','" +
     phone +
     "','" +
-    email +
+    emailAlt +
     "','" +
     address +
     "','" +

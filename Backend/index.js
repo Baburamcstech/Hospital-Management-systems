@@ -11,10 +11,6 @@ const app=express();
 app.use(express.json());
 app.use(cookiesparser());
 app.use(express.urlencoded({extended:false}));
-mongoose.connect('mongodb://localhost:27017/Hospital_management', {useNewUrlParser:true})
-.then(()=>{
-    console.log("MONGO CONNECTION OPEN!!!")
-})
 app.get('/',(req,res)=>{
     res.send("Connected");
 })
@@ -28,10 +24,12 @@ const login=require('./route/authentication.js');
 const registration=require('./route/register.js');
 const appointment=require('./route/appointment.js');
 const Statistic=require('./route/statistics.js');
+const Statistictoday=require('./route/statisticstoday.js');
 app.use('/appointment',appointment)
 app.use('/login',login); 
 app.use('/registration',registration);
 app.use('/statistics',Statistic);
+app.use('/statisticstoday',Statistictoday);
 const port=3002;
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
