@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Appointment_historyStyle.css';
 const Appointment_history = () => {
+  useEffect(() => {
+    const isAuthenticated = document.cookie.split('; ').some((cookie) => {
+      return cookie.startsWith('mycooki');
+    });
+    if (!isAuthenticated) {
+      window.location="./login"
+    }
+  });
+
   const [datas, setDatas] = useState([]);
 
   useEffect(() => {

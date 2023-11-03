@@ -25,7 +25,7 @@ const Navbar = () => {
     <ul className={click? 'nav-menu active':'nav-menu'}>
         <li> <Link to='/'>Home</Link></li>
         <li> <Link to='/Doctors'>Doctors</Link></li>
-        <li> <Link to='/Patient_statistics'>Patients</Link></li>
+        <li> <Link to='/AppointStats'>Statistics</Link></li>
         <li> <Link to='/doctor/Appointment_history'>appointment_History</Link></li>
         <li> <Link to='/About'>About</Link></li>
         {location.pathname === '/' && (

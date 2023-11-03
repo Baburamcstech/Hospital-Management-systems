@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Home from "./routes/Home";
 import About from "./routes/About";
 import Home_admin from "./routes/Admin_home";
+import AppoinStats from "./Admin/Appoint_stats";
 import Doctors from "./routes/Doctors";
 import Login from "./components/Login";
 import Registration from "./components/Registration.js";
@@ -22,20 +23,6 @@ import Patient_statistic from "./components/Patient_statistics";
 
 function App() {
 
-  // const isAuthenticated = true; // Replace with your authentication logic
-  // const Navigate = useNavigate();
-  // const location = useLocation();
-  // const PrivateRoute = ({ element }) => {
-  //   if (isAuthenticated) {
-  //     return element;
-  //   } else {
-     
-  //     return <Navigate to="/login"/>;
-  //     // Navigate to={`/login?destination=${encodeURIComponent(location.path)}`} 
-  //   }
-  // };
-
-
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -50,6 +37,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/admin" element={<Home_admin />} />
+          <Route path="/AppointStats" element={<AppoinStats />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/register" element={<Registration />} />

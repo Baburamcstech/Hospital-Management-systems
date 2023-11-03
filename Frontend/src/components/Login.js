@@ -18,16 +18,16 @@ const Login = () => {
       try {
         axios.post("http://localhost:3002/login", { withCredentials: true,...userlogin })
           .then((res) => {
-            console.log(res.data)
-            if (res.data.status === "success") {
+            if (res.data.status === "success") 
+            {
              setuserlogin({
               email:'',
               password:''
              })
                window.location='/patient';
-            } else {
+            } 
+            else {
               if(res.data.status === "Admin_success"){
-                console.log("ghussa")
                 setuserlogin({
                   email:'',
                   password:''

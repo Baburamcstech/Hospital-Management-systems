@@ -1,16 +1,18 @@
 import React,{useState,useEffect} from 'react'
+import {useLocation } from 'react-router-dom';
 import './Book_A_Style.css';
+// import { useHistory } from 'react-router-dom';
 import axios from "axios";
 const Book_Appointment = () => {
-  // const {values,setvalues}=useState([
-  //   name:"",
-  //   phone:"",
-  //   email:"",
-  //   address:"",
-  //   doctor:"",
-  //   problem:"",
-  //   time_slot:""
-  // ]);
+  // const history = useHistory();
+  useEffect(() => {
+    const isAuthenticated = document.cookie.split('; ').some((cookie) => {
+      return cookie.startsWith('mycooki');
+    });
+    if (!isAuthenticated) {
+      window.location="./login"
+    }
+  });
 
   const [name,setName]=useState('');
   const [phone,setPhone]=useState('');
@@ -24,6 +26,7 @@ const Book_Appointment = () => {
     try{
        axios.post("http://localhost:3002/appointment",{name,phone,email,address,doctor,problem,time_slot})
        .then((res)=>{
+        alert(res.body)
         return res.body;
        })
        setName("");
@@ -32,7 +35,7 @@ const Book_Appointment = () => {
        setAdd("")
        setselectdoctor("")
        setProblem("")
-       setName("")
+       setTime("")
       }
        catch(err){
          console.err(err);
@@ -62,7 +65,7 @@ const Book_Appointment = () => {
                   <div className='page1'>
                     <label>Select Doctor: </label>
                     <select  value={doctor} onChange={e=>setselectdoctor(e.target.value)}>
-                      <option disabled value={"Select Doctor"}  > Select Doctor</option>
+                      <option  value={"Select Doctor"}  > Select Doctor</option>
                       <option value={"Dr. Shimon Shiromani"}>
                         Dr. Shimon Shiromani 
                       </option>
@@ -80,7 +83,7 @@ const Book_Appointment = () => {
                   </div>
                   <div className='page1'>
                     <label>Time slot: </label>
-                    <input type='text' name="time_slot" value={time_slot} required onChange={e=>setTime(e.target.value)}></input>
+                    <input type='text'placeholder='YY-MM-DD H:M:S' name="time_slot" value={time_slot} required onChange={e=>setTime(e.target.value)}></input>
                   </div>
                   <div><button type="submit">Submit</button></div>
             </div>
